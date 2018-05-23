@@ -1,0 +1,78 @@
+<!-- TODO:
+Time/day background - change according to when the time was set
+Hover over "time set" message to see how far away the alarm is
+-->
+<!DOCTYPE html>
+<html ng-app = "TimerApp">
+
+<head>
+	<title> My Alarm Clock </title>
+
+	<!-- css: -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+<!-- The controller: -->
+<div ng-controller = "alarmAppController">
+
+	<b id = "title" class = "title"> Set your time </b>
+
+	<p id = "timeDisplay" ng-attr-id = "timeDisplay" class = "timeDisplay"> 
+		<strong> {{displayHours}} : {{displayMinutes}} </strong> 
+	</p>
+
+		<div class = "hours">
+			<button ng-click = "incrHours()" class = "setter">+</button>
+			<button ng-click = "decrHours()" class = "setter">-</button>
+		</div>
+
+		<div style="display: inline-block; font-size: 50px;">
+			:
+		</div>
+
+		<div class = "minutes">
+			<button ng-click = "incrMinutes()" class = "setter">+</button>
+			<button ng-click = "decrMinutes()" class = "setter">-</button>
+		</div>
+
+	<div class = "controllButtons">
+		<button id = "setTime" ng-click = "setAlarm()">Set time</button>
+		<button ng-click = "stopAlarm()">Stop</button>
+		<button ng-click = "cancelAlarm()"> Cancel </button>
+		<button ng-click = "setSnooze()"> Snooze </button>
+	</div>
+
+	<p id = "alarmMessage" class = "wakeUp"> Wake Up !</p>
+	<p id = "alarmSet"> Alarm is not set</p>
+
+
+	<button id = "modifySnooze" class = "snoozeSetter"> Set Snooze </button>
+
+	<div id = "snoozeForm" class = "changeSnooze"> 
+
+		<div style="vertical-align: middle;">
+			<input type="number" id="newSnooze" ng-value = "snoozeTime" min = "1" max = "20" style="
+			width : 60px;
+			height: 20px;"> 
+		</div>
+	
+		<button id = "snoozeModified"> Set </button>
+	</div>
+	
+</div>
+
+
+
+<!-- Angular JS-->
+<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<!-- Jquery TODO : find online link to this library:-->
+<script src="js/jquery-3.2.1.js"></script>
+
+<script src="js/Timer.js"></script>
+
+
+</body>
+
+</html>
