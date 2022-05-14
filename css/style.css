@@ -141,10 +141,10 @@ section {
     right: 19px;
     font-size: 29px;
     font-family: cursive;
-    background-color: var(--white);
+    background-color: black;
     padding: 19px;
     border-radius: 50%;
-    color: black;
+    color: white;
     width: 10px;
     height: 10px;
     display: flex;
